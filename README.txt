@@ -65,7 +65,7 @@ junit-4.10.jar
 
 	Use any IDE.
 	Download SalesNotificationMessageProject from github and import into IDE as existing projcts in workspace through general type.
-	Download junit-4.10.jar file and add into project build path
+	Download junit-4.10.jar file and add into project build path as Add External Jars in libraries tab
 	Run SalesNotificationMessageMainClass as Java Applicaiton for sales message result in console view
 	Run SalesNotificationMessageMainClassTest file from test folder as Junit test
 
