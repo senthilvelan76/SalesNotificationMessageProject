@@ -58,13 +58,16 @@ Sales and Messages
 Requirements
  ------------
 Java 1.8
+junit-4.10.jar
   
  How to use?
  ------------
 
 	Use any IDE.
 	Download SalesNotificationMessageProject from github and import into IDE as existing projcts in workspace through general type.
-	Run SalesNotificationMessageMainClass as Java Applicaiton.
+	Download junit-4.10.jar file and add into project build path
+	Run SalesNotificationMessageMainClass as Java Applicaiton for sales message result in console view
+	Run SalesNotificationMessageMainClassTest file from test folder as Junit test
 
  
 Solution
@@ -77,6 +80,7 @@ Solution
  Input File:
  salesmessagedetails.txt - It contains sales message details. 
 
+ Test cases covered used junit for validate filename,messagetype and result.
 
 Assumptions
 ----------- 

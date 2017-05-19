@@ -93,8 +93,8 @@ public class SalesMessageLog {
             System.out.println("-------------------------------------------");
             System.out.println("\n\n");
             try {
-                // Add 3 second pause
-                Thread.sleep(3000);
+                // Add 1 second pause
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

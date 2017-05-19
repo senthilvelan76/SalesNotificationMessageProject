@@ -18,14 +18,22 @@ public class SalesNotificationMessageMainClass {
 
     public static void main(String[] args) {
         
-        SalesMessageDetails salesMessageDetails = new SalesMessageDetails();
-
-       
-        try(BufferedReader inputFile = new BufferedReader(new FileReader("inputfile/salesmessagedetails.txt"));) {
+    	SalesNotificationMessageMainClass sn = new SalesNotificationMessageMainClass();
+    	String fileName= "inputfile/salesmessagedetails.txt";
+    	sn.processSalesMessage(fileName);
+    	
+    }
+    
+    
+    //Process the sales message notification
+    public String processSalesMessage(String fileName){
+    	
+    	SalesMessageDetails salesMessageDetails = new SalesMessageDetails();
+        
             String salesMessageLine;
             //Read input file from context path
             
-            
+            try(BufferedReader inputFile = new BufferedReader(new FileReader(fileName));) {
             while((salesMessageLine = inputFile.readLine()) != null) {
                 // Read sales messages line by line and processed with parse the messages type
             	salesMessageDetails.salesMessageProcess(salesMessageLine);  
@@ -33,10 +41,21 @@ public class SalesNotificationMessageMainClass {
                 // Processing every 10th iteration of messages and It will be stoped on 50th iteration of messages              
             	salesMessageDetails.salesMessageLog.report();
             }
-        } catch (Exception e) {
-        	System.out.println("Error in Processing of sales message notification");
-            e.printStackTrace();
-        }
+            } catch (Exception e) {
+            	System.out.println("Error in Processing of sales message notification");
+            	return "ProcessFailure";
+               
+            }
+        
+    	return "ProcessCompleted";
     }
 
+    public String fileNameValidate(String fileName){
+    	if(fileName.equalsIgnoreCase("inputfile/salesmessagedetails.txt")){
+    		
+    		return "FileValid";
+    	}else{
+    		return "FileInValid";
+    	}
+    }
 }

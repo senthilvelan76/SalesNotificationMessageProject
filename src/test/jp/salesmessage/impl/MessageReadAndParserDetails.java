@@ -31,7 +31,7 @@ public class MessageReadAndParserDetails {
     // Validates the message and identifies the message type to get it
     // parsed properly to obtain product details.
     // @return[Boolean] false on wrong message else returns true
-    private boolean parseMessage(String message) {
+    public boolean parseMessage(String message) {
         if (message == null || message.isEmpty()) {
             return false;
         }
@@ -45,8 +45,10 @@ public class MessageReadAndParserDetails {
             return parseMessageType1(messageArray);
         } else {
             System.out.println("Wrong sales notice");
+            return false;
+            
         }
-        return true;
+        //return true;
     }
 
     // Parse message type 1
